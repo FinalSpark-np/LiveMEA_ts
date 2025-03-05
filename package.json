@@ -1,0 +1,32 @@
+{
+  "name": "@maidenlabs/finalspark-ts",
+  "version": "1.0.0",
+  "description": "A minimal TypeScript library that provides an interface to handle live MEA data",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "live data",
+    "MEA",
+    "socket.io",
+    "neuroplatform",
+    "finalspark",
+    "adapter"
+  ],
+  "author": "Maiden Labs <0xcheez>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/",
+    "access": "public"
+  }
+}
