@@ -1,3 +1,5 @@
+![NPM Version](https://img.shields.io/npm/v/%40maidenlabs%2Ffinalspark-ts)
+
 # FinalSpark TS
 
 This is a minimal TypeScript library that provides an interface to handle live MEA data.
