@@ -7,7 +7,9 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true, // Add this line
+    "declarationMap": true // Optional: Add this line to generate source maps for declarations
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
