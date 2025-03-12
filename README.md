@@ -8,7 +8,7 @@ This is a minimal TypeScript library that provides an interface to handle live M
 
 You can install the library using npm:
 
-```
+```bash
 npm install @maidenlabs/finalspark-ts
 ```
 
@@ -19,31 +19,63 @@ To use the library, import the `LiveMEA` class from the library:
 ```typescript
 import { LiveMEA } from '@maidenlabs/finalspark-ts';
 
-const liveMEA = new LiveMEA(1);
-liveMEA.recordSample().then((data) => {
-  console.log(data); // Outputs the recorded live data sample
-});
+// Create instance
+const liveMEA = new LiveMEA();
+
+// Record a single sample of MEA 1
+liveMEA.recordSample(1)
+  .then((data) => {
+    console.log(data); // Contains timestamp and 32x4096 electrode data array
+  });
+
+// Record multiple samples of MEA 1
+liveMEA.recordNSamples(1, 10)
+  .then((samples) => {
+    console.log(samples); // Array of samples, each with timestamp and electrode data
+  });
 ```
 
 ## API
 
 ### `LiveMEA`
 
-#### `constructor(meaId: number = 1)`
+The main class for interacting with live MEA data from the FinalSpark service.
 
-Creates a new instance of the `LiveMEA` class.
+#### Methods
 
-- `meaId` (optional): The MEA ID to use (default is 1).
+##### `recordSample(meaId?: number): Promise<LiveData>`
 
-#### `recordSample(): Promise<LiveData>`
+Records a single sample of live MEA data.
 
-Records a single sample of live data.
+- `meaId` (optional): The MEA ID to use (1-4). Defaults to 1.
+- Returns: Promise resolving to `LiveData` containing:
+  - `timestamp`: Date object when the sample was recorded
+  - `data`: 32x4096 array where each row represents one electrode's samples
 
-#### `recordNSamples(n: number): Promise<LiveData[]>`
+##### `recordNSamples(meaId?: number, n?: number): Promise<LiveData[]>`
 
-Records multiple samples of live data.
+Records multiple samples of live MEA data.
 
-- `n`: The number of samples to record.
+- `meaId` (optional): The MEA ID to use (1-4). Defaults to 1.
+- `n` (optional): Number of samples to record. Defaults to 10.
+- Returns: Promise resolving to array of `LiveData` objects
+
+#### Types
+
+```typescript
+interface LiveData {
+    timestamp: Date;
+    data: number[][];  // 32x4096 array
+}
+```
+
+#### Error Handling
+
+The methods will throw errors in these cases:
+- Invalid MEA ID (must be 1-4)
+- Connection failures
+- Server timeout
+
 
 ## License
 
