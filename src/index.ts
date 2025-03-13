@@ -1,4 +1,4 @@
-import { io, Socket } from 'socket.io-client';
+import { io } from 'socket.io-client';
 
 /**
  * Interface to define the structure of live data.
@@ -51,7 +51,6 @@ export class LiveMEA {
 
             // Set up event handlers before connecting to prevent race conditions
             sio.on("connect", () => {
-                console.log("Connected to server");
                 // Server expects 0-based MEA index (0-3)
                 sio.emit("meaid", meaId - 1);
             });
@@ -59,7 +58,7 @@ export class LiveMEA {
             sio.on("livedata", (data: any) => {                
                 // Convert ArrayBuffer to Float32Array for numerical processing
                 const raw = new Float32Array(data.buffer);
-                
+
                 // Calculate starting index for this MEA's 32 electrodes
                 // Each MEA has 32 electrodes, each with 4096 samples
                 const startIdx = (meaId - 1) * 32 * 4096;
