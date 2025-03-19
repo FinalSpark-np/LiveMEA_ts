@@ -1,8 +1,8 @@
 ![NPM Version](https://img.shields.io/npm/v/%40maidenlabs%2Ffinalspark-ts)
 
-# FinalSpark TS
+# LiveMEA_ts
 
-This is a minimal TypeScript library that provides an interface to handle live MEA data.
+This is a minimal TypeScript library that provides an interface to handle live MEA data from FinalSpark.
 
 ## Authors: Maiden Labs [[github](https://github.com/maidenlabs)]
 
