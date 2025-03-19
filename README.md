@@ -4,7 +4,7 @@
 
 This is a minimal TypeScript library that provides an interface to handle live MEA data.
 
-## Author: Maiden Labs [[github](https://github.com/maidenlabs)]
+## Authors: Maiden Labs [[github](https://github.com/maidenlabs)]
 
 Maiden Labs is a non profit user research lab committed to open-source scientific discovery through biocomputing. Utilizing decentralized technologies, we improve access to biocomputing research, advancing interdisciplinary AI and biocomputing related efforts for greater scientific impact and innovation.
 
