@@ -1,5 +1,3 @@
-![NPM Version](https://img.shields.io/npm/v/%40maidenlabs%2Ffinalspark-ts)
-
 # LiveMEA_ts
 
 This is a minimal TypeScript library that provides an interface to handle live MEA data from FinalSpark.
@@ -13,7 +11,7 @@ Maiden Labs is a non profit user research lab committed to open-source scientifi
 You can install the library using npm:
 
 ```bash
-npm install @maidenlabs/finalspark-ts
+npm i @finalspark-np/livemea_ts
 ```
 
 ## Usage
@@ -21,7 +19,7 @@ npm install @maidenlabs/finalspark-ts
 To use the library, import the `LiveMEA` class from the library:
 
 ```typescript
-import { LiveMEA } from '@maidenlabs/finalspark-ts';
+import { LiveMEA } from '@finalspark-np/livemea_ts';
 
 // Create instance
 const liveMEA = new LiveMEA();
