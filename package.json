@@ -1,7 +1,7 @@
 {
-  "name": "@maidenlabs/finalspark-ts",
+  "name": "@FinalSpark-np/LiveMEA_ts",
   "version": "1.1.1",
-  "homepage": "https://github.com/maidenlabs/finalspark-ts",
+  "homepage": "https://github.com/FinalSpark-np/LiveMEA_ts",
   "description": "A minimal TypeScript library that provides an interface to handle live MEA data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
